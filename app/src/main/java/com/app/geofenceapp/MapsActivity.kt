@@ -203,6 +203,8 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback , GoogleApiClient.C
 
             Log.i("Route", "Route Connected")
 
+            createGeofences(mylatitude,myLongitude)
+
         } else {
             Toast.makeText(this, "Location not Detected", Toast.LENGTH_SHORT).show();
         }
