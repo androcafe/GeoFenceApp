@@ -209,7 +209,7 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback , GoogleApiClient.C
     }
 
     override fun onConnectionSuspended(p0: Int) {
-        mGoogleApiClient.connect();
+        mGoogleApiClient!!.connect();
     }
 
     override fun onConnectionFailed(p0: ConnectionResult) {
