@@ -208,8 +208,9 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback , GoogleApiClient.C
         }
     }
 
-    Log.i(TAG, "Connection Suspended");
-    mGoogleApiClient.connect();
+    override fun onConnectionSuspended(p0: Int) {
+        mGoogleApiClient.connect();
+    }
 
     override fun onConnectionFailed(p0: ConnectionResult) {
 
