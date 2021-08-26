@@ -1,4 +1,12 @@
 <resources>
     <string name="app_name">GeoFenceApp</string>
     <string name="title_activity_maps">Map</string>
+    <string name="add_new_geofence">Add New Geofence</string>
+    <string name="laitude">Latitude</string>
+    <string name="longitude">Longitude</string>
+    <string name="enter_laitude">Enter Latitude</string>
+    <string name="enter_longitude">Enter Longitude</string>
+    <string name="enter_radius">Enter Radius</string>
+    <string name="add_geofence">Add Geofence</string>
+    <string name="radius">Radius </string>
 </resources>

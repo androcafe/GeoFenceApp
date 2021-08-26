@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:id="@+id/bottom_sheet"
+    app:behavior_hideable="false"
+    app:behavior_peekHeight="100dp"
+    android:background="@color/white"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="@layout/activity_maps"
+    android:padding="16dp"
+    app:layout_behavior="com.google.android.material.bottomsheet.BottomSheetBehavior"
+    xmlns:customAttrs="http://schemas.android.com/apk/res-auto">
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <com.app.geofenceapp.customview.CustomFontTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:gravity="center"
+                android:textColor="@color/colorPrimary"
+                android:textSize="21sp"
+                android:text="@string/add_new_geofence"
+                customAttrs:customFont="font_nunito_bold"/>
+
+            <com.app.geofenceapp.customview.CustomFontEditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:textColor="@color/textColor_dark"
+                android:textSize="14sp"
+                android:hint="@string/enter_laitude"
+                android:id="@+id/edtLat"
+                android:inputType="numberDecimal"
+                android:padding="5dp"
+                android:background="@drawable/edt_track_saving"
+                customAttrs:customFont="font_nunito_bold"/>
+
+            <com.app.geofenceapp.customview.CustomFontEditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:textColor="@color/textColor_dark"
+                android:textSize="14sp"
+                android:hint="@string/enter_longitude"
+                android:id="@+id/edtLong"
+                android:inputType="numberDecimal"
+                android:padding="5dp"
+                android:background="@drawable/edt_track_saving"
+                customAttrs:customFont="font_nunito_bold"/>
+
+            <com.app.geofenceapp.customview.CustomFontEditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:textColor="@color/textColor_dark"
+                android:textSize="14sp"
+                android:inputType="number"
+                android:hint="@string/enter_radius"
+                android:id="@+id/edtRadius"
+                android:padding="5dp"
+                android:background="@drawable/edt_track_saving"
+                customAttrs:customFont="font_nunito_bold"/>
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:gravity="center"
+                android:textColor="@color/white"
+                android:textSize="14sp"
+                android:padding="10dp"
+                android:background="@color/colorPrimary"
+                android:text="@string/add_geofence"
+                android:onClick="onClickAdd"
+                android:id="@+id/btnAdd"/>
+
+        </LinearLayout>
+
+</LinearLayout>
