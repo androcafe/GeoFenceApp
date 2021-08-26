@@ -212,11 +212,6 @@ public class MapsActivity : BaseActivity(), OnMapReadyCallback, GoogleApiClient.
 
     private fun setBottomNavigation() {
         sheetBehavior = BottomSheetBehavior.from(layoutBottomSheet);
-
-        /**
-         * bottom sheet state change listener
-         * we are changing button text when sheet changed state
-         * */
         sheetBehavior!!.setBottomSheetCallback(object : BottomSheetBehavior.BottomSheetCallback() {
 
             override fun onSlide(@NonNull bottomSheet: View, slideOffset : Float) {
@@ -266,7 +261,7 @@ public class MapsActivity : BaseActivity(), OnMapReadyCallback, GoogleApiClient.
         val circle: Circle = mMap.addCircle(
             CircleOptions()
                 .center(LatLng(lat, lng))
-                .radius(100.0)
+                .radius(radius)
                 .strokeColor(Color.argb(50, 70, 70, 70))
                 .fillColor(Color.argb(100, 150, 150, 150))
         )
