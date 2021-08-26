@@ -25,30 +25,27 @@ class MyGeofenceReceiver : BroadcastReceiver() {
     override fun onReceive(context: Context, intent: Intent) {
         this.context = context
 
-        System.out.println("Yes")
-
         // This method is called when the BroadcastReceiver is receiving an Intent broadcast.
-        var geofencingEvent = GeofencingEvent.fromIntent(intent) as GeofencingEvent
+        val geofencingEvent = GeofencingEvent.fromIntent(intent) as GeofencingEvent
         if (geofencingEvent.hasError()) {
             Log.d(TAG, "GeofencingEvent error " + geofencingEvent.getErrorCode())
         } else {
-            var transaction = geofencingEvent.getGeofenceTransition()
-            var geofences = geofencingEvent.getTriggeringGeofences()
-            var geofence = geofences.get(0)
+            val transaction = geofencingEvent.getGeofenceTransition()
+            val geofences = geofencingEvent.getTriggeringGeofences()
+            val geofence = geofences.get(0)
             if (transaction == Geofence.GEOFENCE_TRANSITION_ENTER && geofence.getRequestId().equals(GEOFENCE_ID)) {
                 Log.d(TAG, "You are inside of desired area");
             } else {
                 Log.d(TAG, "You are outside of desired area");
             }
-            var geofenceTransitionDetails = getGeofenceTrasitionDetails(transaction, geofences) as String
-            System.out.println("Yess")
+            val geofenceTransitionDetails = getGeofenceTrasitionDetails(transaction, geofences) as String
             sendNotification( geofenceTransitionDetails );
         }
     }
 
     private fun getGeofenceTrasitionDetails(geoFenceTransition: Int, geofences: List<Geofence>): String {
         // get the ID of each geofence triggered
-        var triggeringGeofencesList =  ArrayList<String>();
+        val triggeringGeofencesList =  ArrayList<String>();
         for (i in 0..geofences.size-1) {
             triggeringGeofencesList.add( geofences.get(i).requestId)
         }

@@ -43,6 +43,7 @@ public class MapsActivity : BaseActivity(), OnMapReadyCallback, GoogleApiClient.
     lateinit var edtRadius: EditText
 
     private lateinit var mMap: GoogleMap
+    //**************** UI COMPONENTS **********************
 
     private var mGoogleApiClient: GoogleApiClient? = null
     private var mLocation: Location? = null
